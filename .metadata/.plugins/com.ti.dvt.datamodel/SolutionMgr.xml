@@ -2,11 +2,11 @@
 <java version="1.6.0_13" class="java.beans.XMLDecoder"> 
  <object class="com.ti.dvt.datamodel.solution.SolutionManager$PersistState"> 
   <void property="defaultSolution"> 
-   <string>C:/Users/jhshin/Desktop/secret/Microprocessor\dvt\AnalysisSolutionsTemp\AnalysisSolution1742382689216\null</string> 
+   <string>C:/Users/jhshin/Desktop/secret/Microprocessor\dvt\AnalysisSolutionsTemp\AnalysisSolution1742469502450\null</string> 
   </void> 
   <void property="openedSolutions"> 
    <void method="add"> 
-    <string>C:/Users/jhshin/Desktop/secret/Microprocessor\dvt\AnalysisSolutionsTemp\AnalysisSolution1742382689216\null</string> 
+    <string>C:/Users/jhshin/Desktop/secret/Microprocessor\dvt\AnalysisSolutionsTemp\AnalysisSolution1742469502450\null</string> 
    </void> 
    <void method="add"> 
     <string>C:\ti\ccsv5\ccs_base\DebugServer\..\dvt_3.4.0.201304031516\CodeGen\solutions\CodeGenCoverage</string> 
