@@ -21,11 +21,11 @@ EN3					.equ	0x10C
 GPIOIM				.equ	0x410
 GPIOICR				.equ	0x41C
 
-SW_UP				.equ	0x1E
-SW_DOWN				.equ	0x1D
-SW_LEFT				.equ	0x1B
-SW_RIGHT			.equ	0x17
-SW_SELECT			.equ	0x0F
+SW_UP				.equ	0x1E	;11110
+SW_DOWN				.equ	0x1D	;11101
+SW_LEFT				.equ	0x1B	;11011
+SW_RIGHT			.equ	0x17	;10111
+SW_SELECT			.equ	0x0F	;01111
 ;--------------------------------------------------
              .text                           ; Program Start
              .global RESET                   ; Define entry point
