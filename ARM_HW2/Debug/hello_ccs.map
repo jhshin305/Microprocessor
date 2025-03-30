@@ -1,9 +1,9 @@
 ******************************************************************************
                   TI ARM Linker PC v5.0.4                      
 ******************************************************************************
->> Linked Mon Mar 31 02:16:47 2025
+>> Linked Mon Mar 31 02:35:31 2025
 
-OUTPUT FILE NAME:   <ARM_HW2.out>
+OUTPUT FILE NAME:   <ARM_HW1000.out>
 ENTRY POINT SYMBOL: "_c_int00"  address: 00000c69
 
 
@@ -117,14 +117,14 @@ address    name
 00000d39   C$$EXIT
 00000675   CFAL96x64x16Init
 00000ad5   ConfigureUART
-0000037b   LED_Init
-00000427   LED_Off
-0000040d   LED_On
+0000037d   LED_Init
+00000461   LED_Off
+00000447   LED_On
 00000df7   ResetISR
 UNDEFED    SHT$$INIT_ARRAY$$Base
 UNDEFED    SHT$$INIT_ARRAY$$Limit
 0000026d   Switch_Init
-000003f9   Switch_Input
+000003fb   Switch_Input
 00000dfd   SysCtlDelay
 00000e03   UARTClockSourceSet
 00000b31   UARTStdioConfig
@@ -181,10 +181,10 @@ address    name
 00000001   __TI_args_main
 00000200   __STACK_SIZE
 0000026d   Switch_Init
-0000037b   LED_Init
-000003f9   Switch_Input
-0000040d   LED_On
-00000427   LED_Off
+0000037d   LED_Init
+000003fb   Switch_Input
+00000447   LED_On
+00000461   LED_Off
 0000047d   num_1
 00000481   num_3
 00000489   UARTvprintf

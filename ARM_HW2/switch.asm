@@ -157,7 +157,7 @@ Switch_Init:
 		bic r0, r0, r2
 		str r0, [r1]
 
-		;bx lr
+		b _EXIT
 
 LED_Init:
 
@@ -214,7 +214,7 @@ LED_Init:
 		orr r0, r0, #0x4
 		str r0, [r1]
 
-		bx lr
+		b _EXIT
 
 Switch_Input:
 
@@ -226,35 +226,6 @@ Switch_Input:
 
 		ldr r5, [r1]
 
-		bx lr
-
-LED_On:
-
-		mov r5, #GPIO_BASE
-		mov r1, #0x26000
-		add r1, r1, r5
-		mov r5, #0x10
-		add r1, r1, r5
-
-		ldr r5, [r1]
-		orr r5, #0x4
-		str r5, [r1]
-
-		bx lr
-
-LED_Off:
-
-		mov r5, #GPIO_BASE
-		mov r1, #0x26000
-		add r1, r1, r5
-		mov r5, #0x10
-		add r1, r1, r5
-
-		ldr r5, [r1]
-		bic r5, #0x4
-		str r5, [r1]
-
-		bx lr
 
 DELAY:	MOVW r3,#0xffff
 
@@ -293,6 +264,34 @@ _left:
 
 _right:
 		mov r1, #'E'
+		b _EXIT
+
+LED_On:
+
+		mov r5, #GPIO_BASE
+		mov r1, #0x26000
+		add r1, r1, r5
+		mov r5, #0x10
+		add r1, r1, r5
+
+		ldr r5, [r1]
+		orr r5, #0x4
+		str r5, [r1]
+
+		b _EXIT
+
+LED_Off:
+
+		mov r5, #GPIO_BASE
+		mov r1, #0x26000
+		add r1, r1, r5
+		mov r5, #0x10
+		add r1, r1, r5
+
+		ldr r5, [r1]
+		bic r5, #0x4
+		str r5, [r1]
+
 		b _EXIT
 
 _EXIT:
