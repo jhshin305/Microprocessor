@@ -1,0 +1,9 @@
+
+**** Build of configuration Debug for project ARM_HW2 ****
+
+"C:\\ti\\ccsv5\\utils\\bin\\gmake" -k all 
+gmake: ../startup_ccs.c: Timestamp out of range; substituting 1970-01-01 09:00:00
+gmake: ../hello_ccs.cmd: Timestamp out of range; substituting 1970-01-01 09:00:00
+gmake: Nothing to be done for `all'.
+
+**** Build Finished ****
