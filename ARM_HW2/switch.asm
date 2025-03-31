@@ -162,7 +162,6 @@ Switch_Init:
 		bx lr
 
 LED_Init:
-
 		;RCGC2 - enable
 		mov r0, #GPIO_BASE	;RCGC : General-Purpose Input/Output Run Mode Clock Gating Control
 		mov r1, #0xFE000
@@ -219,7 +218,6 @@ LED_Init:
 		bx lr
 
 Switch_Input:
-
 		mov r5, #GPIO_BASE
 		mov r1, #0x63000
 		add r1, r1, r5
@@ -236,7 +234,6 @@ _DELAY_LOOP:
 		sub r3,r3,#1
 		B _DELAY_LOOP
 _DELAY_EXIT:
-
 		cmp r5, #SW_UP
 		BEQ _up
 
@@ -272,7 +269,6 @@ _EXIT:
 		bx lr
 
 LED_On:
-
 		mov r5, #GPIO_BASE
 		mov r1, #0x26000
 		add r1, r1, r5
@@ -286,7 +282,6 @@ LED_On:
 		bx lr
 
 LED_Off:
-
 		mov r5, #GPIO_BASE
 		mov r1, #0x26000
 		add r1, r1, r5
@@ -300,12 +295,10 @@ LED_Off:
 		bx lr
 
 Blink_slow:
-
 		MOVW r7, #0xffff
 		b _Blink
 
 Blink_fast:
-
 		MOVW r7, #0x8000
 		b _Blink
 
