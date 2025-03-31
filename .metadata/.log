@@ -1227,3 +1227,77 @@ Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.
 
 !ENTRY org.eclipse.cdt.core 1 0 2025-03-31 02:36:07.224
 !MESSAGE Indexed 'ARM_HW2' (0 sources, 0 headers) in 0.00 sec: 0 declarations; 0 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.cdt.core 1 0 2025-03-31 02:43:55.981
+!MESSAGE Indexed 'blinky' (2 sources, 4 headers) in 0.22 sec: 53 declarations; 173 references; 0 unresolved inclusions; 0 syntax errors; 0 unresolved names (0.00%)
+
+!ENTRY org.eclipse.ui 4 0 2025-03-31 03:21:50.967
+!MESSAGE Problems opening perspective 'com.ti.ccstudio.TICPerspective'
+!SESSION 2025-03-31 11:43:21.534 -----------------------------------------------
+eclipse.buildId=M20120914-1540
+java.version=1.6.0_13
+java.vendor=Sun Microsystems Inc.
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=ko_KR
+Framework arguments:  -product com.ti.ccstudio.branding.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product com.ti.ccstudio.branding.product
+
+!ENTRY org.eclipse.ui 2 0 2025-03-31 11:43:24.362
+!MESSAGE Warnings while parsing the viewer contributions from the 'org.eclipse.ui.popupMenus' extension point
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-03-31 11:43:24.362
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-03-31 11:43:24.362
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-03-31 11:43:24.362
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.CEditorRulerActions/org.eclipse.cdt.debug.ui.actions.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-03-31 11:43:24.362
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.CBreakpointPropertiesRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-03-31 11:43:24.362
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.internal.ui.actions.asm.EnableDisableBreakpointRulerActionDelegate'
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-03-31 11:43:24.362
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.debug.ui', id='AUTOGEN:::org.eclipse.cdt.debug.ui.AsmEditorRulerActions/org.eclipse.cdt.debug.ui.actions.asm.RulerCreateBreakpointInteractiveAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-03-31 11:43:24.362
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='AUTOGEN:::org.eclipse.cdt.dsf.debug.ui.disassemblyRulerActions/org.eclipse.debug.ui.actions.RulerAddBreakpointAction'
+!SUBENTRY 1 org.eclipse.ui 2 0 2025-03-31 11:43:24.362
+!MESSAGE invalid keybinding: Cannot bind to an incomplete key sequence: plug-in='org.eclipse.cdt.dsf.ui', id='org.eclipse.cdt.dsf.debug.ui.disassembly.commands.rulerToggleBreakpoint'
+
+!ENTRY org.eclipse.osgi 2 1 2025-03-31 11:55:49.171
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showFunctionOffsets in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2025-03-31 11:55:49.171
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showFunctionOffsetsTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2025-03-31 11:55:49.171
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showCodeBytes in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2025-03-31 11:55:49.172
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showCodeBytesTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2025-03-31 11:55:49.172
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showAddress in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.osgi 2 1 2025-03-31 11:55:49.172
+!MESSAGE NLS missing message: DisassemblyPreferencePage_showAddressTooltip in: org.eclipse.cdt.dsf.debug.internal.ui.disassembly.DisassemblyMessages
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2025-03-31 11:57:07.582
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/copy_decompress_rle.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2025-03-31 12:00:11.778
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/boot.asm
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2025-03-31 12:00:11.787
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/cpy_tbl.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2025-03-31 12:00:12.361
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/copy_decompress_rle.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2025-03-31 12:01:32.305
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/copy_decompress_rle.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2025-03-31 12:32:46.223
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/copy_decompress_rle.c
+
+!ENTRY org.eclipse.cdt.dsf.ui 2 0 2025-03-31 12:36:31.861
+!MESSAGE Unable to locate file: /tmp/TI_MKLIBw9rtfe/SRC/copy_decompress_rle.c
+
+!ENTRY org.eclipse.ui 4 0 2025-03-31 12:45:36.843
+!MESSAGE Problems opening perspective 'com.ti.ccstudio.TICPerspective'

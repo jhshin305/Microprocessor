@@ -10,26 +10,26 @@
 </perspectiveBar>
 <coolbarLayout>
 <coolItem id="group.file" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="103" y="22"/>
+<coolItem id="org.eclipse.ui.workbench.file" itemType="typeToolBarContribution" x="153" y="22"/>
 <coolItem id="additions" itemType="typeGroupMarker"/>
 <coolItem id="com.ti.ccstudio.project.ui.projectActionSet" itemType="typeToolBarContribution" x="56" y="22"/>
 <coolItem id="com.ti.dvt.profile.setup.actionSet" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.cdt.dsf.debug.ui.updateModes" itemType="typeToolBarContribution" x="38" y="22"/>
+<coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.cdt.ui.editor.asm.AsmEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.debug.ui.launch.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="57" y="22"/>
 <coolItem id="org.eclipse.debug.ui.main.toolbar" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="com.ti.ccstudio.debug.ui.toolbar" itemType="typeToolBarContribution" x="149" y="22"/>
+<coolItem id="com.ti.ccstudio.debug.ui.toolbar" itemType="typeToolBarContribution" x="191" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="57" y="22"/>
 <coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="38" y="22"/>
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="122" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
-<coolItem id="org.eclipse.cdt.ui.editor.asm.AsmEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
-<coolItem id="org.eclipse.cdt.ui.editor.CEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
 </coolbarLayout>
-<page aggregateWorkingSetId="Aggregate for window 1741776598404" focus="true" label="Workspace - CCS Edit">
+<page aggregateWorkingSetId="Aggregate for window 1741776598404" focus="true" label="Workspace - CCS Debug">
 <editors>
 <editorArea activeWorkbook="DefaultEditorWorkbook">
 <info part="DefaultEditorWorkbook">
@@ -37,17 +37,18 @@
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
+<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="hello.c" partName="hello.c" path="C:/Users/jhshin/Desktop/secret/Microprocessor/ARM_HW1000/hello.c" title="hello.c" tooltip="ARM_HW1000/hello.c" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ARM_HW1000/hello.c"/>
-<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1952" selectionTopPixel="780"/>
-</editor>
-<editor id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="switch.asm" partName="switch.asm" path="C:/Users/jhshin/Desktop/secret/Microprocessor/ARM_HW1000/switch.asm" title="switch.asm" tooltip="ARM_HW1000/switch.asm" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ARM_HW1000/switch.asm"/>
+<editor id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="switch.asm" partName="switch.asm" path="C:/Users/jhshin/Desktop/secret/Microprocessor/ARM_HW2/switch.asm" title="switch.asm" tooltip="ARM_HW2/switch.asm" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ARM_HW2/switch.asm"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.cdt.ui.editor.CEditor" name="hello.c" partName="hello.c" path="C:/Users/jhshin/Desktop/secret/Microprocessor/ARM_HW2/hello.c" title="hello.c" tooltip="ARM_HW2/hello.c" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/ARM_HW2/hello.c"/>
+<editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="1772" selectionTopPixel="1550"/>
 </editor>
 </editors>
 <views>
@@ -60,16 +61,14 @@
 <view id="com.ti.ccstudio.system.setup.ui.views.TargetConfigurationView" partName="Target Configurations">
 <viewState/>
 </view>
-<view id="org.eclipse.debug.ui.RegisterView" partName="Registers">
-<viewState/>
-</view>
 <view id="org.eclipse.debug.ui.DebugView" partName="Debug">
 <viewState/>
 </view>
 <view id="org.eclipse.ui.views.ProblemView" partName="Problems">
 <viewState PRIMARY_SORT_FIELD="org.eclipse.ui.ide.severityAndDescriptionField" categoryGroup="org.eclipse.ui.ide.severity" markerContentGenerator="org.eclipse.ui.ide.problemsGenerator" partName="Problems">
 <expanded>
-<category IMemento.internal.id="Errors (5 items)"/>
+<category IMemento.internal.id="Errors (1 item)"/>
+<category IMemento.internal.id="Errors"/>
 </expanded>
 <columnWidths org.eclipse.ui.ide.locationField="105" org.eclipse.ui.ide.markerType="105" org.eclipse.ui.ide.pathField="140" org.eclipse.ui.ide.resourceField="105" org.eclipse.ui.ide.severityAndDescriptionField="557"/>
 <visible IMemento.internal.id="org.eclipse.ui.ide.severityAndDescriptionField"/>
@@ -82,6 +81,9 @@
 <view id="org.eclipse.ui.console.ConsoleView" partName="Console">
 <viewState/>
 </view>
+<view id="org.eclipse.cdt.dsf.debug.ui.disassembly.view" partName="Disassembly">
+<viewState disassembly.syncActiveContext="true" disassembly.trackExpression="false"/>
+</view>
 <view id="org.eclipse.debug.ui.VariableView" partName="Variables">
 <viewState/>
 </view>
@@ -89,7 +91,7 @@
 <viewState/>
 </view>
 </views>
-<perspectives activePart="org.eclipse.ui.navigator.ProjectExplorer" activePerspective="com.ti.ccstudio.TICPerspective">
+<perspectives activePart="org.eclipse.debug.ui.DebugView" activePerspective="com.ti.ccstudio.TIDebugPerspective">
 <perspective editorAreaTrimState="2" editorAreaVisible="1" fixed="0" version="0.016">
 <descriptor class="com.ti.ccstudio.internal.ui.perspectives.TICPerspectiveFactory" id="com.ti.ccstudio.TICPerspective" label="CCS Edit"/>
 <alwaysOnActionSet id="org.eclipse.mylyn.context.ui.actionSet"/>
@@ -375,7 +377,7 @@
 <page content="org.eclipse.debug.ui.DebugView" label="LabelNotFound"/>
 </folder>
 </info>
-<info part="org.eclipse.ui.editorss" ratio="0.24960506" ratioLeft="158" ratioRight="475" relationship="4" relative="topLeft"/>
+<info part="org.eclipse.ui.editorss" ratio="0.12579618" ratioLeft="158" ratioRight="1098" relationship="4" relative="topLeft"/>
 <info folder="true" part="org.eclipse.ui.internal.ViewStack@10105c1" ratio="0.69984204" ratioLeft="443" ratioRight="190" relationship="4" relative="org.eclipse.ui.editorss">
 <folder activePageID="org.eclipse.ui.console.ConsoleView" appearance="2" expanded="2">
 <page content="org.eclipse.ui.console.ConsoleView" label="Console"/>
@@ -458,20 +460,21 @@
 <alwaysOnActionSet id="com.ti.ccstudio.debug.ui.breakpointActionSet"/>
 <alwaysOnActionSet id="org.eclipse.cdt.dsf.debug.ui.updateModes"/>
 <alwaysOnActionSet id="com.ti.ccstudio.project.ui.projectActionSet_debugPerspective"/>
+<alwaysOnActionSet id="org.eclipse.cdt.ui.buildConfigActionSet"/>
 <alwaysOnActionSet id="org.eclipse.debug.ui.debugActionSet"/>
-<show_view_action id="org.eclipse.debug.ui.DebugView"/>
-<show_view_action id="org.eclipse.debug.ui.VariableView"/>
-<show_view_action id="org.eclipse.debug.ui.ExpressionView"/>
-<show_view_action id="org.eclipse.debug.ui.RegisterView"/>
-<show_view_action id="org.eclipse.debug.ui.BreakpointView"/>
-<show_view_action id="org.eclipse.cdt.dsf.debug.ui.disassembly.view"/>
+<show_view_action id="com.ti.ccstudio.debug.trace.ui.TraceView"/>
 <show_view_action id="com.ti.ccstudio.system.setup.ui.views.TargetConfigurationView"/>
 <show_view_action id="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser"/>
-<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
-<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
-<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.cdt.dsf.debug.ui.disassembly.view"/>
+<show_view_action id="org.eclipse.debug.ui.BreakpointView"/>
+<show_view_action id="org.eclipse.debug.ui.DebugView"/>
+<show_view_action id="org.eclipse.debug.ui.ExpressionView"/>
+<show_view_action id="org.eclipse.debug.ui.RegisterView"/>
+<show_view_action id="org.eclipse.debug.ui.VariableView"/>
 <show_view_action id="com.ti.ccstudio.scripting.console.ConsoleView"/>
-<show_view_action id="com.ti.ccstudio.debug.trace.ui.TraceView"/>
+<show_view_action id="org.eclipse.pde.runtime.LogView"/>
+<show_view_action id="org.eclipse.ui.console.ConsoleView"/>
+<show_view_action id="org.eclipse.ui.views.ContentOutline"/>
 <new_wizard_action id="com.ti.ccstudio.system.setup.editor.wizards.SystemSetupNewWizard"/>
 <perspective_action id="com.ti.ccstudio.TICPerspective"/>
 <hide_menu_item_id id="org.eclipse.cdt.ui.actions.OpenCSearchPage"/>
@@ -644,8 +647,8 @@
 <view id="org.eclipse.debug.ui.DebugView"/>
 <view id="org.eclipse.debug.ui.VariableView"/>
 <view id="org.eclipse.debug.ui.ExpressionView"/>
-<view id="org.eclipse.debug.ui.RegisterView"/>
 <view id="org.eclipse.ui.console.ConsoleView"/>
+<view id="org.eclipse.cdt.dsf.debug.ui.disassembly.view"/>
 <fastViews>
 <view id="com.ti.ccstudio.system.setup.ui.views.TargetConfigurationView" ratio="0.3"/>
 </fastViews>
@@ -688,23 +691,24 @@
 </folder>
 </info>
 <info folder="true" part="right" ratio="0.6998433" ratioLeft="1786" ratioRight="766" relationship="2" relative="org.eclipse.ui.editorss">
-<folder appearance="2" expanded="2">
+<folder activePageID="org.eclipse.cdt.dsf.debug.ui.disassembly.view" appearance="2" expanded="2">
+<page content="org.eclipse.cdt.dsf.debug.ui.disassembly.view" label="Disassembly"/>
 <page content="org.eclipse.ui.views.ContentOutline" label="LabelNotFound"/>
-<page content="org.eclipse.cdt.dsf.debug.ui.disassembly.view" label="LabelNotFound"/>
 <page content="org.eclipse.cdt.debug.ui.memory.memorybrowser.MemoryBrowser" label="LabelNotFound"/>
-<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory"/>
+<presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
+<part id="0"/>
+</presentation>
 </folder>
 </info>
 <info folder="true" part="topRight" ratio="0.44984326" ratioLeft="1148" ratioRight="1404" relationship="2" relative="topLeft">
 <folder activePageID="org.eclipse.debug.ui.ExpressionView" appearance="2" expanded="2">
 <page content="org.eclipse.debug.ui.VariableView" label="Variables"/>
 <page content="org.eclipse.debug.ui.ExpressionView" label="Expressions"/>
-<page content="org.eclipse.debug.ui.RegisterView" label="Registers"/>
+<page content="org.eclipse.debug.ui.RegisterView" label="LabelNotFound"/>
 <page content="org.eclipse.debug.ui.BreakpointView" label="LabelNotFound"/>
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
 <part id="1"/>
-<part id="2"/>
 </presentation>
 </folder>
 </info>
@@ -716,166 +720,145 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ARM_HW2/hello.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ARM_HW1/hello.c"/>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/ARM_HW2/switch.asm"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/ARM_HW1/switch.asm"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/ARM_HW2/switch.asm"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ARM_HW2/hello.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/ARM_HW2/switch.asm"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ARM_HW1/hello.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/ARM_HW1/switch.asm"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" path="/ARM_HW1000/hello.c"/>
-<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" path="/ARM_HW1000/switch.asm"/>
 </editors>
-<item historyLabel="hello.c" index="0">
-<position/>
-</item>
-<item historyLabel="hello.c" index="1">
-<position info="not_deleted" x="5014" y="42"/>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="5782" y="0"/>
 </item>
 <item historyLabel="hello.c" index="0">
-<position info="not_deleted" x="540" y="94"/>
+<position info="not_deleted" x="2464" y="0"/>
 </item>
-<item historyLabel="hello.c" index="1">
-<position info="not_deleted" x="1781" y="0"/>
-</item>
-<item historyLabel="hello.c" index="0">
-<position info="not_deleted" x="2274" y="11"/>
-</item>
-<item historyLabel="hello.c" index="1">
-<position info="not_deleted" x="1902" y="0"/>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="5782" y="0"/>
 </item>
 <item historyLabel="hello.c" index="0">
-<position info="not_deleted" x="2015" y="0"/>
+<position info="not_deleted" x="2540" y="0"/>
 </item>
-<item historyLabel="hello.c" index="1">
-<position info="not_deleted" x="5124" y="0"/>
-</item>
-<item historyLabel="hello.c" index="0">
-<position info="not_deleted" x="2299" y="0"/>
-</item>
-<item historyLabel="hello.c" index="1">
-<position info="not_deleted" x="5340" y="0"/>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="5873" y="0"/>
 </item>
 <item historyLabel="hello.c" index="0">
-<position info="not_deleted" x="2398" y="10"/>
+<position info="not_deleted" x="1772" y="0"/>
 </item>
-<item historyLabel="hello.c" index="1">
-<position info="not_deleted" x="5340" y="0"/>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="5319" y="0"/>
 </item>
-<item historyLabel="hello.c" index="1">
-<position info="not_deleted" x="5455" y="0"/>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
 </item>
-<item historyLabel="switch.asm" index="2">
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="5333" y="0"/>
+</item>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="5332" y="0"/>
+</item>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="5764" y="0"/>
+</item>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="5764" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="5742" y="0"/>
+</item>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="5401" y="0"/>
+</item>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1708" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="5742" y="0"/>
+</item>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="5401" y="0"/>
+</item>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="5401" y="0"/>
+</item>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="5324" y="2"/>
+</item>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="5324" y="2"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="6010" y="0"/>
+</item>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="6010" y="0"/>
+</item>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="412" y="0"/>
+</item>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="412" y="0"/>
+</item>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="412" y="0"/>
+</item>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="412" y="0"/>
+</item>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="412" y="0"/>
+</item>
+<item historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
+<position info="not_deleted" x="412" y="0"/>
+</item>
+<item historyLabel="switch.asm" index="1">
 <position info="not_deleted" x="0" y="0"/>
 </item>
-<item historyLabel="switch.asm" index="3">
-<position info="not_deleted" x="3870" y="0"/>
-</item>
-<item historyLabel="switch.asm" index="2">
-<position info="not_deleted" x="436" y="21"/>
-</item>
-<item historyLabel="switch.asm" index="3">
-<position/>
-</item>
-<item historyLabel="switch.asm" index="2">
-<position info="not_deleted" x="436" y="21"/>
-</item>
-<item historyLabel="switch.asm" index="3">
-<position/>
-</item>
-<item historyLabel="switch.asm" index="2">
-<position info="not_deleted" x="934" y="182"/>
-</item>
-<item historyLabel="switch.asm" index="3">
-<position/>
-</item>
-<item historyLabel="switch.asm" index="2">
-<position info="not_deleted" x="0" y="5338"/>
-</item>
-<item historyLabel="switch.asm" index="3">
-<position info="not_deleted" x="5338" y="0"/>
-</item>
-<item historyLabel="hello.c" index="1">
-<position info="not_deleted" x="4382" y="0"/>
-</item>
-<item historyLabel="switch.asm" index="3">
-<position/>
-</item>
-<item historyLabel="hello.c" index="1">
-<position info="not_deleted" x="4382" y="0"/>
-</item>
-<item historyLabel="switch.asm" index="3">
-<position/>
-</item>
-<item historyLabel="hello.c" index="1">
-<position info="not_deleted" x="4382" y="0"/>
-</item>
-<item historyLabel="switch.asm" index="3">
-<position info="not_deleted" x="3219" y="0"/>
-</item>
-<item historyLabel="hello.c" index="1">
-<position info="not_deleted" x="4382" y="0"/>
-</item>
-<item historyLabel="switch.asm" index="3">
-<position info="not_deleted" x="3219" y="0"/>
-</item>
-<item historyLabel="hello.c" index="1">
-<position info="not_deleted" x="4382" y="0"/>
-</item>
-<item historyLabel="switch.asm" index="3">
-<position info="not_deleted" x="3219" y="0"/>
-</item>
-<item historyLabel="hello.c" index="1">
-<position info="not_deleted" x="4382" y="0"/>
-</item>
-<item historyLabel="switch.asm" index="3">
-<position info="not_deleted" x="3219" y="0"/>
-</item>
-<item historyLabel="hello.c" index="1">
-<position info="not_deleted" x="4278" y="0"/>
-</item>
-<item historyLabel="switch.asm" index="3">
-<position info="not_deleted" x="3219" y="0"/>
-</item>
-<item historyLabel="hello.c" index="1">
-<position info="not_deleted" x="4278" y="0"/>
-</item>
-<item historyLabel="switch.asm" index="4">
-<position info="not_deleted" x="4984" y="0"/>
-</item>
-<item historyLabel="hello.c" index="5">
-<position info="not_deleted" x="2015" y="0"/>
-</item>
-<item historyLabel="switch.asm" index="6">
-<position info="not_deleted" x="4984" y="0"/>
-</item>
-<item historyLabel="hello.c" index="7">
-<position info="not_deleted" x="2619" y="0"/>
-</item>
-<item historyLabel="switch.asm" index="8">
-<position info="not_deleted" x="5336" y="0"/>
-</item>
-<item historyLabel="hello.c" index="5">
-<position info="not_deleted" x="0" y="2619"/>
-</item>
-<item historyLabel="hello.c" index="7">
-<position info="not_deleted" x="2619" y="0"/>
-</item>
-<item historyLabel="switch.asm" index="6">
-<position info="not_deleted" x="0" y="5336"/>
-</item>
-<item historyLabel="switch.asm" index="8">
-<position info="not_deleted" x="5336" y="0"/>
-</item>
-<item historyLabel="hello.c" index="7">
-<position info="not_deleted" x="1952" y="0"/>
-</item>
-<item historyLabel="hello.c" index="9">
-<position info="not_deleted" x="1952" y="0"/>
-</item>
-<item active="true" historyLabel="switch.asm" index="10">
+<item historyLabel="switch.asm" index="1">
 <position info="not_deleted" x="0" y="0"/>
+</item>
+<item active="true" historyLabel="hello.c" index="0">
+<position info="not_deleted" x="1772" y="0"/>
 </item>
 </navigationHistory>
 <input factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/" type="8"/>
@@ -898,17 +881,14 @@
 </trimLayout>
 </window>
 <mruList>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="switch.asm" tooltip="ARM_HW1/switch.asm">
-<persistable path="/ARM_HW1/switch.asm"/>
-</file>
-<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello.c" tooltip="ARM_HW1/hello.c">
-<persistable path="/ARM_HW1/hello.c"/>
-</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello.c" tooltip="ARM_HW2/hello.c">
 <persistable path="/ARM_HW2/hello.c"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="switch.asm" tooltip="ARM_HW2/switch.asm">
 <persistable path="/ARM_HW2/switch.asm"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.asm.AsmEditor" name="switch.asm" tooltip="ARM_HW1/switch.asm">
+<persistable path="/ARM_HW1/switch.asm"/>
 </file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.cdt.ui.editor.CEditor" name="hello.c" tooltip="ARM_HW0/hello.c">
 <persistable path="/ARM_HW0/hello.c"/>
