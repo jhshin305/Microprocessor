@@ -101,8 +101,8 @@ int main(void)
      } else if (num=='C'){
     	 LED_Off();
      }
-     //else if(num=='D') Blink_slow();
-     //else if(num=='E') Blink_fast();
+     else if(num=='D') Blink_slow();
+     else if(num=='E') Blink_fast();
      SysCtlDelay(8000000/3);
  }   //end while
 

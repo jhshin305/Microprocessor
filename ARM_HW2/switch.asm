@@ -38,6 +38,8 @@ SW_SELECT			.equ	0x0F	;01111
              .global Switch_Input
              .global LED_On
              .global LED_Off
+             .global Blink_slow
+             .global Blink_fast
 			 .global num_1
 			 .global num_3
 
@@ -157,7 +159,7 @@ Switch_Init:
 		bic r0, r0, r2
 		str r0, [r1]
 
-		b _EXIT
+		bx lr
 
 LED_Init:
 
@@ -214,7 +216,7 @@ LED_Init:
 		orr r0, r0, #0x4
 		str r0, [r1]
 
-		b _EXIT
+		bx lr
 
 Switch_Input:
 
@@ -266,6 +268,9 @@ _right:
 		mov r1, #'E'
 		b _EXIT
 
+_EXIT:
+		bx lr
+
 LED_On:
 
 		mov r5, #GPIO_BASE
@@ -278,7 +283,7 @@ LED_On:
 		orr r5, #0x4
 		str r5, [r1]
 
-		b _EXIT
+		bx lr
 
 LED_Off:
 
@@ -292,10 +297,40 @@ LED_Off:
 		bic r5, #0x4
 		str r5, [r1]
 
-		b _EXIT
-
-_EXIT:
 		bx lr
+
+Blink_slow:
+
+		MOVW r7, #0xffff
+		b _Blink
+
+Blink_fast:
+
+		MOVW r7, #0x8000
+		b _Blink
+
+_Blink:
+		mov r0, #5
+		mov r2, lr
+
+_Blink_LOOP:
+		cbz r0, _Blink_Exit
+		sub r0, r0, #1
+		bl LED_On
+		bl _Blink_DELAY
+		bl LED_Off
+		bl _Blink_DELAY
+		B _Blink_LOOP
+
+_Blink_Exit: bx r2
+
+_Blink_DELAY: MOV r4, r7, LSL #5
+_Blink_DELAY_LOOP1:
+		cmp r4, #0
+		beq _Blink_LOOP_Exit
+		sub r4, r4, #1
+		B _Blink_DELAY_LOOP1
+_Blink_LOOP_Exit: bx lr
 
 num_1:
 		mov r0, r1
