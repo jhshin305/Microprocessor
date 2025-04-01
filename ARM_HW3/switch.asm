@@ -431,7 +431,7 @@ Blink_slow:
 		b _Blink
 
 Blink_fast:
-		MOVW r7, #0x8000
+		MOVW r7, #0x6000
 		b _Blink
 
 _Blink:
