@@ -163,54 +163,49 @@ Switch_Init:
 
 LED_Init:
 		;RCGC2 - enable
-		mov r0, #GPIO_BASE	;RCGC : General-Purpose Input/Output Run Mode Clock Gating Control
+		mov r0, #GPIO_BASE
 		mov r1, #0xFE000
 		add r1, r1, r0
 		mov r0, #RCGCGPIO
 		add r1, r1, r0
-
 		ldr r0, [r1]
 		orr r0, r0, #0x40
 		str r0, [r1]
 		nop
 		nop
 		;GPIODIR - output
-		mov r0, #GPIO_BASE	;DIR
+		mov r0, #GPIO_BASE
 		mov r1, #0x26000
 		add r1, r1, r0
 		mov r0, #GPIODIR
 		add r1, r1, r0
-
 		ldr r0, [r1]
 		orr r0, r0, #0x4
 		str r0, [r1]
 		;GPIOAFSEL - GPIO
-		mov r0, #GPIO_BASE	;AFSEL : Alternate Function Select
+		mov r0, #GPIO_BASE
 		mov r1, #0x26000
 		add r1, r1, r0
 		mov r0, #GPIOAFSEL
 		add r1, r1, r0
-
 		ldr r0, [r1]
 		bic r0, r0, #0x4
 		str r0, [r1]
 		;GPIODR8R - 8-mA
-		mov r0, #GPIO_BASE	;AFSEL : Alternate Function Select
+		mov r0, #GPIO_BASE
 		mov r1, #0x26000
 		add r1, r1, r0
 		mov r0, #GPIODR8R
 		add r1, r1, r0
-
 		ldr r0, [r1]
 		orr r0, r0, #0x4
 		str r0, [r1]
 		;GPIODEN - enable
-		mov r0, #GPIO_BASE	;AFSEL : Alternate Function Select
+		mov r0, #GPIO_BASE
 		mov r1, #0x26000
 		add r1, r1, r0
 		mov r0, #GPIODEN
 		add r1, r1, r0
-
 		ldr r0, [r1]
 		orr r0, r0, #0x4
 		str r0, [r1]
