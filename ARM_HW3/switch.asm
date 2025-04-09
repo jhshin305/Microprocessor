@@ -467,7 +467,10 @@ Printf:
 		mov r2, #UARTDR
 		add r3, r3, r2
 		;mov r0, #'A'
-		str r0, [r3]
+		ldr r2, [r3]
+		bic r2, #0xFF
+		orr r2, r0
+		str r2, [r3]
 
 		bx r1
 
