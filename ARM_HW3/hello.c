@@ -95,7 +95,6 @@ int main(void)
 	Switch_Init();
 	LED_Init();
 	UART_Init();
-	Printf();
 
 	Printf_string(10, "LED MODE\n\r");
 
