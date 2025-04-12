@@ -1,0 +1,1 @@
+"./drivers/cfal96x64x16.obj" "./utils/uartstdio.obj" "./switch.obj" "./startup_ccs.obj" "./hello.obj" -l"libc.a" -l"C:/ti/TivaWare_C_Series-1.1/examples/boards/dk-tm4c123g/hello/ccs/../../../../../driverlib/ccs/Debug/driverlib.lib" -l"C:/ti/TivaWare_C_Series-1.1/examples/boards/dk-tm4c123g/hello/ccs/../../../../../grlib/ccs/Debug/grlib.lib" "../hello_ccs.cmd" 

@@ -15,11 +15,16 @@ GPIOAMSEL			.equ	0x528
 GPIOPCTL			.equ	0x52C
 GPIOLOCK			.equ	0x520
 GPIOCR				.equ	0x524
+GPIODR8R			.equ	0x508
 
 GPIODATA			.equ	0x000
 EN3					.equ	0x10C
 GPIOIM				.equ	0x410
 GPIOICR				.equ	0x41C
+GPIOIS				.equ	0x404
+GPIOIBE				.equ	0x408
+GPIOIEV				.equ	0x40C
+GPIOMIS				.equ	0x418
 
 SW_UP				.equ	0x1E
 SW_DOWN				.equ	0x1D
@@ -255,7 +260,131 @@ Switch_Init:
 		orr r0, r0, #0x1f
 		str r0, [r1]
 
+LED_Init:
+		;RCGC2 - enable
+		mov r0, #GPIO_BASE	;RCGC : General-Purpose Input/Output Run Mode Clock Gating Control
+		mov r1, #0xFE000
+		add r1, r1, r0
+		mov r0, #RCGCGPIO
+		add r1, r1, r0
 
+		ldr r0, [r1]
+		orr r0, r0, #0x40
+		str r0, [r1]
+		nop
+		nop
+		;GPIODIR - output
+		mov r0, #GPIO_BASE	;DIR
+		mov r1, #0x26000
+		add r1, r1, r0
+		mov r0, #GPIODIR
+		add r1, r1, r0
+
+		ldr r0, [r1]
+		orr r0, r0, #0x4
+		str r0, [r1]
+		;GPIOAFSEL - GPIO
+		mov r0, #GPIO_BASE	;AFSEL : Alternate Function Select
+		mov r1, #0x26000
+		add r1, r1, r0
+		mov r0, #GPIOAFSEL
+		add r1, r1, r0
+
+		ldr r0, [r1]
+		bic r0, r0, #0x4
+		str r0, [r1]
+		;GPIODR8R - 8-mA
+		mov r0, #GPIO_BASE	;AFSEL : Alternate Function Select
+		mov r1, #0x26000
+		add r1, r1, r0
+		mov r0, #GPIODR8R
+		add r1, r1, r0
+
+		ldr r0, [r1]
+		orr r0, r0, #0x4
+		str r0, [r1]
+		;GPIODEN - enable
+		mov r0, #GPIO_BASE	;AFSEL : Alternate Function Select
+		mov r1, #0x26000
+		add r1, r1, r0
+		mov r0, #GPIODEN
+		add r1, r1, r0
+
+		ldr r0, [r1]
+		orr r0, r0, #0x4
+		str r0, [r1]
+
+		;bx lr
+
+INTCONF:
+			mov r0, #GPIO_BASE	;ICR : Interrupt Clear
+			mov r1, #0x63000
+			add r1, r1, r0
+			mov r0, #GPIOICR
+			add r1, r1, r0
+
+			ldr r0, [r1]
+			orr r0, r0, #0xff
+			str r0, [r1]
+
+		mov r0, #GPIO_BASE	;GPIOIS : detect edge
+		mov r1, #0x63000
+		add r1, r1, r0
+		mov r0, #GPIOIS
+		add r1, r1, r0
+		
+		ldr r0, [r1]
+		bic r0, r0, #0x1f
+		str r0, [r1]
+
+		mov r0, #GPIO_BASE	;GPIOIEV : pm0, 1 - detect rising edge
+		mov r1, #0x63000
+		add r1, r1, r0
+		mov r0, #GPIOIEV
+		add r1, r1, r0
+
+		ldr r0, [r1]
+		bic r0, r0, #0x0f
+		str r0, [r1]
+
+		mov r0, #GPIO_BASE	;GPIOIBE : pm4 - detect both edges
+		mov r1, #0x63000
+		add r1, r1, r0
+		mov r0, #GPIOIBE
+		add r1, r1, r0
+
+		ldr r0, [r1]
+		orr r0, r0, #0x10
+		str r0, [r1]
+
+
+;int127 enable
+INTEN:
+		mov r0, #NVIC_BASE
+		mov r1, #0xE000
+		add r1, r1, r0
+		mov r0, #EN3
+		add r1, r1, r0
+
+		ldr r0, [r1]
+		orr r0, r0, #0x8000
+		str r0, [r1]
+
+		;bx lr
+
+;portm interrupt unmasking
+UNMSK:
+		mov r0, #GPIO_BASE	;IM : Interrupt Mask
+		mov r1, #0x63000
+		add r1, r1, r0
+		mov r0, #GPIOIM
+		add r1, r1, r0
+
+		ldr r0, [r1]
+		orr r0, r0, #0xff
+		str r0, [r1]
+
+		bx lr
 
 Switch_Input:
 
@@ -305,10 +434,68 @@ num_3:
 
 
 IntDefaultHandler:
-		bx lr
+		b IntDefaultHandler
 
-IntGPIOm:
-		bx lr
+IntGPIOm:	.asmfunc
+			stmfd sp!, {a1-a4, lr}
+ICL:
+			mov r0, #GPIO_BASE	;ICR : Interrupt Clear
+			mov r1, #0x63000
+			add r1, r1, r0
+			mov r0, #GPIOICR
+			add r1, r1, r0
+
+			ldr r0, [r1]
+			orr r0, r0, #0xff
+			str r0, [r1]
+_Switch_input:
+			mov r0, #GPIO_BASE
+    		mov r1, #0x63000
+    		add r1, r1, r0
+    		mov r0, #GPIODATA
+    		add r1, r1, r0
+    		mov r0, #0x7c
+    		add r1, r0
+    		ldr r0, [r1]
+
+			tst r0, #0x10
+			beq _LED_On
+			tst r0, #0x01
+			beq _LED_On
+			tst r0, #0x02
+			beq _LED_Off
+			b _LED_Off
+_LED_On:
+		mov r5, #GPIO_BASE
+		mov r1, #0x26000
+		add r1, r1, r5
+		mov r5, #0x10
+		add r1, r1, r5
+
+		ldr r5, [r1]
+		orr r5, #0x4
+		str r5, [r1]
+
+		b _Exit
+_LED_Off:
+		mov r5, #GPIO_BASE
+		mov r1, #0x26000
+		add r1, r1, r5
+		mov r5, #0x10
+		add r1, r1, r5
+
+		ldr r5, [r1]
+		bic r5, #0x4
+		str r5, [r1]
+
+		b _Exit
+_Exit:
+			
+			ldmfd sp!,{a1-a4,lr}
+			bx lr
+			.endasmfunc
+
+		
 
 
 			.retain
