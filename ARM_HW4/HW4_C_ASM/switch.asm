@@ -15,7 +15,6 @@ GPIOAMSEL			.equ	0x528
 GPIOPCTL			.equ	0x52C
 GPIOLOCK			.equ	0x520
 GPIOCR				.equ	0x524
-GPIODR8R			.equ	0x508
 
 GPIODATA			.equ	0x000
 EN3					.equ	0x10C
@@ -307,8 +306,6 @@ LED_Init:
 		orr r0, r0, #0x4
 		str r0, [r1]
 
-		;bx lr
-
 INTCONF:
 		mov r0, #GPIO_BASE	;ICR : Interrupt Clear
 		mov r1, #0x63000
@@ -365,7 +362,7 @@ INTEN:
 
 ;portm interrupt unmasking
 UNMSK:
-		mov r0, #GPIO_BASE	;IM : Interrupt Mask
+		mov r0, #GPIO_BASE
 		mov r1, #0x63000
 		add r1, r1, r0
 		mov r0, #GPIOIM
@@ -425,7 +422,7 @@ num_3:
 
 
 IntDefaultHandler:
-		b IntDefaultHandler
+		bx lr
 
 IntGPIOm:	.asmfunc
 			stmfd sp!, {a1-a4, lr}
