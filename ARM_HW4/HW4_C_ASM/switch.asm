@@ -28,6 +28,9 @@ GPIOMIS				.equ	0x418
 
 SW_UP				.equ	0x1E
 SW_DOWN				.equ	0x1D
+SW_LEFT				.equ	0x1B
+SW_RIGHT			.equ	0x17
+SW_SELECT			.equ	0x0F
 ;--------------------------------------------------
              .text                           ; Program Start
              .global RESET                   ; Define entry point
@@ -317,15 +320,15 @@ LED_Init:
 		;bx lr
 
 INTCONF:
-			mov r0, #GPIO_BASE	;ICR : Interrupt Clear
-			mov r1, #0x63000
-			add r1, r1, r0
-			mov r0, #GPIOICR
-			add r1, r1, r0
+		mov r0, #GPIO_BASE	;ICR : Interrupt Clear
+		mov r1, #0x63000
+		add r1, r1, r0
+		mov r0, #GPIOICR
+		add r1, r1, r0
 
-			ldr r0, [r1]
-			orr r0, r0, #0xff
-			str r0, [r1]
+		ldr r0, [r1]
+		orr r0, r0, #0xff
+		str r0, [r1]
 
 		mov r0, #GPIO_BASE	;GPIOIS : detect edge
 		mov r1, #0x63000
@@ -337,7 +340,7 @@ INTCONF:
 		bic r0, r0, #0x1f
 		str r0, [r1]
 
-		mov r0, #GPIO_BASE	;GPIOIEV : pm0, 1 - detect rising edge
+		mov r0, #GPIO_BASE	;GPIOIEV : pm0~3 - detect rising edge
 		mov r1, #0x63000
 		add r1, r1, r0
 		mov r0, #GPIOIEV
@@ -369,8 +372,6 @@ INTEN:
 		ldr r0, [r1]
 		orr r0, r0, #0x8000
 		str r0, [r1]
-
-		;bx lr
 
 ;portm interrupt unmasking
 UNMSK:
@@ -448,7 +449,7 @@ ICL:
 			ldr r0, [r1]
 			orr r0, r0, #0xff
 			str r0, [r1]
-_Switch_input:
+Switch_input:
 			mov r0, #GPIO_BASE
     		mov r1, #0x63000
     		add r1, r1, r0
@@ -458,11 +459,11 @@ _Switch_input:
     		add r1, r0
     		ldr r0, [r1]
 
-			tst r0, #0x10
+			cmp r0, #SW_SELECT
 			beq _LED_On
-			tst r0, #0x01
+			cmp r0, #SW_LEFT
 			beq _LED_On
-			tst r0, #0x02
+			cmp r0, #SW_RIGHT
 			beq _LED_Off
 			b _LED_Off
 _LED_On:
