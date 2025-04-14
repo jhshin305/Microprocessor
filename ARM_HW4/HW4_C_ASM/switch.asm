@@ -296,16 +296,6 @@ LED_Init:
 		ldr r0, [r1]
 		bic r0, r0, #0x4
 		str r0, [r1]
-		;GPIODR8R - 8-mA
-		mov r0, #GPIO_BASE	;AFSEL : Alternate Function Select
-		mov r1, #0x26000
-		add r1, r1, r0
-		mov r0, #GPIODR8R
-		add r1, r1, r0
-
-		ldr r0, [r1]
-		orr r0, r0, #0x4
-		str r0, [r1]
 		;GPIODEN - enable
 		mov r0, #GPIO_BASE	;AFSEL : Alternate Function Select
 		mov r1, #0x26000
