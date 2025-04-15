@@ -307,16 +307,6 @@ LED_Init:
 		str r0, [r1]
 
 INTCONF:
-		mov r0, #GPIO_BASE	;ICR : Interrupt Clear
-		mov r1, #0x63000
-		add r1, r1, r0
-		mov r0, #GPIOICR
-		add r1, r1, r0
-
-		ldr r0, [r1]
-		orr r0, r0, #0xff
-		str r0, [r1]
-
 		mov r0, #GPIO_BASE	;GPIOIS : detect edge
 		mov r1, #0x63000
 		add r1, r1, r0
@@ -327,14 +317,14 @@ INTCONF:
 		bic r0, r0, #0x1f
 		str r0, [r1]
 
-		mov r0, #GPIO_BASE	;GPIOIEV : pm0~3 - detect rising edge
+		mov r0, #GPIO_BASE	;GPIOIEV : pm2, 3 - detect falling edge
 		mov r1, #0x63000
 		add r1, r1, r0
 		mov r0, #GPIOIEV
 		add r1, r1, r0
 
 		ldr r0, [r1]
-		bic r0, r0, #0x0f
+		bic r0, r0, #0x0c
 		str r0, [r1]
 
 		mov r0, #GPIO_BASE	;GPIOIBE : pm4 - detect both edges
@@ -369,7 +359,7 @@ UNMSK:
 		add r1, r1, r0
 
 		ldr r0, [r1]
-		orr r0, r0, #0xff
+		orr r0, r0, #0x1c
 		str r0, [r1]
 
 		bx lr
@@ -425,7 +415,6 @@ IntDefaultHandler:
 		bx lr
 
 IntGPIOm:	.asmfunc
-			stmfd sp!, {a1-a4, lr}
 ICL:
 			mov r0, #GPIO_BASE	;ICR : Interrupt Clear
 			mov r1, #0x63000
@@ -478,8 +467,6 @@ _LED_Off:
 
 		b _Exit
 _Exit:
-			
-			ldmfd sp!,{a1-a4,lr}
 			bx lr
 			.endasmfunc
 
