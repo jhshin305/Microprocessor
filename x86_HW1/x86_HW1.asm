@@ -94,45 +94,45 @@ sector_2:						; Program Starts
 ;																	    		;
 ;-------------------------------------------------------------------------------;
 print_string:
-	mov cx, 0	;row number
-	mov di, 0	;column number
+	mov cx, 0		;row number
+	mov di, 0		;column number
+	mov ah, 0x07	;검정 배경, 흰색 글자
+	cld
 
-	mov esi, ID
+	mov si, ID
 	call print_string_loop
-	mov esi, NAMEE
+	mov si, NAMEE
 	call new_line
 	call print_string_loop
-	mov esi, Answer
+	mov si, Answer
 	call new_line
 	call print_string_loop
 	call print_sp
 	jmp exit
 
 print_string_loop:
-	lodsb             ; DS:SI의 데이터를 AL로 로드하고 SI 증가
-	cmp al, 0         ; NULL이면 문자열 끝
+	lodsb             		; ESI의 데이터를 AL로 로드하고 SI 증가
+	cmp al, 0         		; NULL이면 문자열 끝
 	je done_print
-	mov byte [es:di], al   ; 문자 출력
-	inc di
-	mov byte [es:di], 0x07  ; 속성(흰색 글자, 검정 배경)
-	inc di
+	stosw			 		; EDI에 AX을 저장하고 DI 증가
 	jmp print_string_loop
 
 done_print:
 	ret
 
 new_line:
+	push ax
 	inc cx
 	mov ax, cx
 	mov bx, 160
 	mul bx
 	mov di, ax
+	pop ax
 	ret
 print_sp:
 	pop bx
-	push cx
-	mov cx, 0	;count
-print_sp_loop:
+	mov cx, 0	;count digits
+get_sp_value_loop:
 	mov ax, 0xF000
 	and ax, bx
 	shr ax, 12
@@ -141,25 +141,19 @@ print_sp_loop:
 	jmp print_number
 print_alphabet:
 	add al, 0x37
-	jmp print_sp_loop2
+	jmp print_sp_loop
 print_number:
 	add al, 0x30
-	jmp print_sp_loop2
+	jmp print_sp_loop
 
-print_sp_loop2:
-	mov byte [es:di], al   ; 문자 출력
-	inc di
-	mov byte [es:di], 0x07  ; 속성(흰색 글자, 검정 배경)
-	inc di
+print_sp_loop:
+	mov ah, 0x07	;검정 배경, 흰색 글자
+	stosw
 	shl bx, 4
 	inc cx
 	cmp cx, 4
-	je done_print_sp
-	jmp print_sp_loop
-
-done_print_sp:
-	pop cx
-	ret
+	je done_print
+	jmp get_sp_value_loop
 
 exit:
 
