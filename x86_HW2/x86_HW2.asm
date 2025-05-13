@@ -68,12 +68,16 @@ sector_2:						; Program Starts
 ;																  ;
 ;Load the address of GDT to GDTR								  ;
 ;																  ;
+	lgdt [gdt_ptr]			; Load GDT
 ;------------------------------------------------------------------
 
 ;----------------------Write your code here------------------------
 ;																  ;
 ;Control Register 0(CR0) setting								  ;
 ;																  ;
+	mov eax, cr0			; Load CR0
+	or eax, 1				; Set PE bit
+	mov cr0, eax			; Store CR0
 ;------------------------------------------------------------------
 
 	mov bx, 0x10	
@@ -90,7 +94,7 @@ Protected_START:	; Protected mode starts
 [bits 32]			; Assembly command
 					; Let NASM compiler know that this code consists of 32its
 					
-	jmp $							; jump to current address,
+	; jmp $							; jump to current address,
 									; infinite loop
 									
 									
@@ -99,11 +103,13 @@ Protected_START:	; Protected mode starts
 ; Store the value of Selector which indicates the domain 		  ;
 ; of Video Memory on ES Register								  ;
 ;																  ;
+	mov ax, VIDEO_SEL
+	mov es, ax
 ;------------------------------------------------------------------
 
 	call print_protected	
 	call print_cs_Protected
-	;jmp $							; for first problem
+	jmp $							; for first problem
 									; after finishing making GDT and loading it,
 									; remove the remark ';'
 									
@@ -113,9 +119,11 @@ Protected_START:	; Protected mode starts
 ; Load ldt														  ;
 ; 											 					  ;
 ;																  ;
+	mov ax, LDTR
+	lldt ax
 ;------------------------------------------------------------------	
 
-	;jmp 0x04:LDT0_Start			; for second problem
+	; jmp 0x04:LDT0_Start			; for second problem
 									; after finishing making LDT and loading it,
 									; remove the remark ';'
 
@@ -123,7 +131,7 @@ LDT0_Start:
 
 	call print_cs_LDT0_Start	
 	
-	;jmp $							; for second problem
+	; jmp $							; for second problem
 									; after finishing making LDT and loading it,
 									; remove the remark ';'	
 	
@@ -255,6 +263,51 @@ SYS_CODE_SEL equ	08h
 ;Video Segment Descriptor										  ;
 ;LDTR descriptor (for LDT)										  ;
 ;																  ;
+gdt1:
+	dw	0xFFFF		; limit
+	dw	0x0000		; base
+	db	0x00		; base
+	db	0x9A		; p, dpl, type
+	db	0xCF		; flags, limit
+	db	0x00		; base
+
+SYS_DATA_SEL equ	10h
+gdt2:
+	dw	0xFFFF		; limit
+	dw	0x0000		; base
+	db	0x00		; base
+	db	0x92		; p, dpl, type
+	db	0xCF		; flags, limit
+	db	0x00		; base
+
+VIDEO_SEL equ	18h
+gdt3:
+	dw	0xFFFF		; limit
+	dw	0x8000		; base
+	db	0x0B		; base
+	db	0x92		; p, dpl, type
+	db	0xCF		; flags, limit
+	db	0x00		; base
+
+LDTR equ	20h
+gdt4:
+	dw	0xFFFF		; limit
+	dw	0x0000		; base
+	db	0x00		; base
+	db	0x82		; p, dpl, type
+	db	0xCF		; flags, limit
+	db	0x00		; base
+
+SYS_CODE_SEL_1 equ 28h
+gdt5:
+	dw	0xFFFF		; limit
+	dw	0x0000		; base
+	db	0x00		; base
+	db	0x9A		; type
+	db	0xCF		; s, dpl, p
+	db	0x00		; base
+
+
 ;------------------------------------------------------------------
 
 gdt_end:
@@ -265,6 +318,9 @@ gdt_ptr:
 ;Calculate the base and limit of GDT							  ;
 ;Store in gdt_prt memory address								  ;
 ;																  ;
+	dw	gdt_end - gdt - 1	; limit
+	dd	gdt				; base
+
 ;------------------------------------------------------------------
 
 
@@ -275,6 +331,23 @@ gdt_ptr:
 ;Code Segment Descriptor										  ;
 ;Data Segment Descriptor										  ;
 ;																  ;
+ldt:
+LDT_CODE_SEL_0 equ 04h
+ldt0:
+	dw	0xFFFF		; limit
+	dw	0x0000		; base
+	db	0x00		; base
+	db	0x9A		; p, dpl, type
+	db	0xCF		; flags, limit
+	db	0x00		; base
+LDT_DATA_SEL_0 equ 0Ch
+ldt1:
+	dw	0xFFFF		; limit
+	dw	0x0000		; base
+	db	0x00		; base
+	db	0x92		; p, dpl, type
+	db	0xCF		; flags, limit
+	db	0x00		; base
 ;------------------------------------------------------------------
 			
 sector_end:
