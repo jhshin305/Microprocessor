@@ -109,7 +109,7 @@ Protected_START:	; Protected mode starts
 
 	call print_protected	
 	call print_cs_Protected
-	jmp $							; for first problem
+	; jmp $							; for first problem
 									; after finishing making GDT and loading it,
 									; remove the remark ';'
 									
@@ -123,7 +123,7 @@ Protected_START:	; Protected mode starts
 	lldt ax
 ;------------------------------------------------------------------	
 
-	; jmp 0x04:LDT0_Start			; for second problem
+	jmp 0x04:LDT0_Start			; for second problem
 									; after finishing making LDT and loading it,
 									; remove the remark ';'
 
@@ -131,7 +131,7 @@ LDT0_Start:
 
 	call print_cs_LDT0_Start	
 	
-	; jmp $							; for second problem
+	jmp $							; for second problem
 									; after finishing making LDT and loading it,
 									; remove the remark ';'	
 	
@@ -289,14 +289,15 @@ gdt3:
 	db	0xCF		; flags, limit
 	db	0x00		; base
 
+; 이부분만 하면 될 듯
 LDTR equ	20h
 gdt4:
 	dw	0xFFFF		; limit
-	dw	0x0000		; base
-	db	0x00		; base
-	db	0x82		; p, dpl, type
+	dw	ldt		; base 			x
+	db	0x00		; base 			x
+	db	0x82		; p, dpl, type 	x type
 	db	0xCF		; flags, limit
-	db	0x00		; base
+	db	0x00		; base 			x
 
 SYS_CODE_SEL_1 equ 28h
 gdt5:
