@@ -289,15 +289,14 @@ gdt3:
 	db	0xCF		; flags, limit
 	db	0x00		; base
 
-; 이부분만 하면 될 듯
 LDTR equ	20h
 gdt4:
 	dw	0xFFFF		; limit
-	dw	ldt		; base 			x
-	db	0x00		; base 			x
-	db	0x82		; p, dpl, type 	x type
+	dw	ldt			; base
+	db	0x00		; base
+	db	0x82		; p, dpl, type
 	db	0xCF		; flags, limit
-	db	0x00		; base 			x
+	db	0x00		; base
 
 SYS_CODE_SEL_1 equ 28h
 gdt5:
